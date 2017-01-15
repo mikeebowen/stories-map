@@ -34,7 +34,6 @@ function googleOauth(app) {
     function (req, res) {
       res.redirect(`${ngRoute}/`);
     });
-
 }
 
 module.exports = googleOauth;
