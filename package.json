@@ -25,7 +25,6 @@
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
-    "cors": "^2.8.1",
     "dotenv-safe": "^4.0.3",
     "express": "^4.14.0",
     "express-session": "^1.14.2",

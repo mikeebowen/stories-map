@@ -6,13 +6,11 @@ const app = express();
 const morgan = require('morgan');
 const clc = require('cli-color');
 const compression = require('compression');
-const cors = require('cors');
 const authRouter = express.Router();
 const srv = require('./srv');
 let port = process.env.PORT;
 let serverStartTime = new Date();
 
-app.use(cors());
 app.use(compression());//use compression
 app.use(morgan('combined'));// log erros with morgan
 //call routes with express router
