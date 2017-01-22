@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import './variables';
 body {
   font-family: 'Ubuntu', sans-serif;
   background-image: url('./assets/images/scary-666620.jpg');
@@ -13,4 +13,12 @@ h4,
 h5,
 h6 {
   font-family: 'IM Fell English', serif !important;
+}
+
+.main-blue-box {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: fadeout(@sm-dark-blue, 10%);
+  min-height: 800px;
+  border-radius: .5%;
 }
