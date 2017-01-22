@@ -2,36 +2,51 @@
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const mongoose = require('mongoose');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const db = mongoose.connection;
 const googlePassportStrategy = require('./googlePassportStrategy')();
 let ngRoute = process.env.NODE_ENV === 'development' || 'dev' ? '//localhost:4200' : '';
+let session_secret = process.env.SESSION_SECRET;
+let mongoUri = process.env.MONGOLAB_URI;
+// session storate settings
+const store = new MongoDBStore({
+  uri: mongoUri,
+  collection: `userSessions`
+});
 
 function googleOauth(app) {
-  app.use(cookieParser('keyboard cat'));
+  // use session section with cookieParser
+  app.use(cookieParser(session_secret));
+  //set the session storage settings
   app.use(session({
-    secret: 'keyboard cat',
+    secret: session_secret,
     resave: false,
     saveUninitialized: false,
-    maxAge: 1000 * 60 * 60 * 24
-  })
-  );
-  app.use(passport.initialize()); //initialize passport
-  app.use(passport.session()); //restore the session if there is one
-
+    maxAge: 1000 * 60 * 60 * 8,
+    unset: 'destroy',
+    store: store,
+    proxy: true
+  }));
+  // initialize passport
+  app.use(passport.initialize());
+  // restore the session if there is one 
+  app.use(passport.session());
+  // use the googleOauth strategy
   passport.use(googlePassportStrategy);
-
-  passport.serializeUser(function (user, cb) {
+  //serialize and deserialize the user session
+  passport.serializeUser((user, cb) => {
     cb(null, user);
   });
-
-  passport.deserializeUser(function (obj, cb) {
+  passport.deserializeUser((obj, cb) => {
     cb(null, obj);
   });
-
+  // googleOauth route for verification
   app.get('/login/google', passport.authenticate('google', { scope: ['profile'] }));
-
+  // googleOauth callback
   app.get('/login/google/return',
     passport.authenticate('google', { failureRedirect: `${ngRoute}/login` }),
-    function (req, res) {
+    (req, res) => {
       res.redirect(`${ngRoute}/`);
     });
 }
