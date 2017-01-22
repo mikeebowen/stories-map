@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
-    "dev": "ng server --proxy proxy.json & nodemon server.js",
+    "dev": "ng serve --proxy proxy.json & nodemon server.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "2.2.3",
     "@angular/platform-browser-dynamic": "2.2.3",
     "@angular/router": "3.2.3",
+    "bootstrap": "^3.3.7",
     "cli-color": "^1.1.0",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",

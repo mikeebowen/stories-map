@@ -17,6 +17,11 @@ app.use(morgan('combined'));// log erros with morgan
 srv.auth.googleOauth(authRouter);
 app.use('/auth', authRouter);
 
+
+
+
+
+
 //error handling
 app.use(function (err, req, res) {
   console.error(err.stack);
