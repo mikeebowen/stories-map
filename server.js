@@ -12,7 +12,6 @@ const db = mongoose.connection;
 const srv = require('./srv');
 let port = process.env.PORT;
 let serverStartTime = new Date();
-let session_secret = process.env.SESSION_SECRET;
 let mongoUri = process.env.MONGOLAB_URI;
 
 mongoose.connect(mongoUri);

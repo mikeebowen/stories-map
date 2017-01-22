@@ -2,9 +2,7 @@
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const db = mongoose.connection;
 const googlePassportStrategy = require('./googlePassportStrategy')();
 let ngRoute = process.env.NODE_ENV === 'development' || 'dev' ? '//localhost:4200' : '';
 let session_secret = process.env.SESSION_SECRET;
@@ -12,7 +10,7 @@ let mongoUri = process.env.MONGOLAB_URI;
 // session storate settings
 const store = new MongoDBStore({
   uri: mongoUri,
-  collection: `userSessions`
+  collection: 'userSessions'
 });
 
 function googleOauth(app) {
