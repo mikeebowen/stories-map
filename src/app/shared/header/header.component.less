@@ -1,0 +1,37 @@
+@import '../../../variables';
+@header-navbar-font-size: 2rem;
+.navbar {
+  font-family: 'IM Fell English', serif;
+  font-size: @header-navbar-font-size;
+  background-color: @sm-dark-blue;
+  border: none;
+  opacity: 0.8;
+  color: @sm-light-blue;
+  .active>a {
+    background-color: @sm-black;
+  }
+  a {
+    color: @sm-light-blue;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.btn {
+  background-color: @sm-black;
+  border-color: @sm-black;
+  color: @sm-light-blue;
+  &:hover {
+    background-color: @sm-med-dark-blue;
+  }
+}
+
+.header-search-box {
+  background-color: @sm-dark-blue;
+  border-color: @sm-light-blue;
+}
+
+.header-search-form {
+  margin-left: 5%;
+}
