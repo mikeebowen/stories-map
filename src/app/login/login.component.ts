@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
-  private hostName: string;
+  hostName: string;
 
   constructor() {
     this.hostName = window.location.hostname;

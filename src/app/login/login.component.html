@@ -1,7 +1,15 @@
-<p>
-  login page
-  <a href="//{{hostName}}:3000/auth/login/google">Google</a>
-</p>
-<div>
-  <p>{{hostName}}</p>
-</div>
+<main class="container main-blue-box" role="presentation">
+  <div class="row" role="presentation">
+    <div class="col-xs-12" role="presentation">
+      <div class="jumbotron">
+        <h2>Tell your own scary stories</h2>
+        <div class="googleButtonWrapper">
+          <a #googleButton class="btn btn-google btn-lg" href="#" role="button"><i class="fa fa-google" aria-hidden="true"></i>
+Create Account with Google</a>
+          <a class="btn btn-google btn-lg" id="testBtn" href="//{{hostName}}:3000/auth/login/google" role="button"><i class="fa fa-google" aria-hidden="true"></i>
+Login with Google</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

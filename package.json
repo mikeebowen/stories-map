@@ -30,6 +30,7 @@
     "dotenv-safe": "^4.0.3",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
+    "font-awesome": "^4.7.0",
     "mongoose": "^4.7.7",
     "morgan": "^1.7.0",
     "ng2-bootstrap": "^1.2.1",
