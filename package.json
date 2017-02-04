@@ -37,6 +37,7 @@
     "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
+    "stories-map-models": "file://local_modules/models",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
   },
@@ -50,6 +51,7 @@
     "gulp-eslint": "^3.0.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
+    "jsdoc": "^3.4.3",
     "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
