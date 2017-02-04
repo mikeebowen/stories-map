@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const compression = require('compression');
 const authRouter = express.Router();
 const db = mongoose.connection;
-const srv = require('./srv');
+const routes = require('./srv/routes');
 let port = process.env.PORT;
 let serverStartTime = new Date();
 let mongoUri = process.env.MONGOLAB_URI;
@@ -21,9 +21,9 @@ db.on('open', (callback) => {
 });
 
 app.use(compression());//use compression
-app.use(morgan('combined'));// log erros with morgan
+app.use(morgan('combined'));// log errors with morgan
 //call routes with express router
-srv.auth.googleOauth(authRouter);
+routes.auth.googleOauth(authRouter);
 app.use('/auth', authRouter);
 
 //error handling
