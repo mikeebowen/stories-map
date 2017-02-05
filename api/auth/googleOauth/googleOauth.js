@@ -3,7 +3,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const googlePassportStrategy = require('./googlePassportStrategy/googlePassportStrategy')();
+const googlePassportStrategy = require('./googlePassportStrategy/googlePassportStrategy');
 let ngRoute = process.env.NODE_ENV === 'development' || 'dev' ? '//localhost:4200' : '';
 let session_secret = process.env.SESSION_SECRET;
 let mongoUri = process.env.MONGOLAB_URI;

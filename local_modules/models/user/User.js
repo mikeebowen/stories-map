@@ -10,7 +10,6 @@ const mongoose = require('mongoose');
  * @todo Create password field in user schema
  */
 const userSchema = mongoose.Schema({
-  userName: String,
   email: String,
   displayName: String,
   name: {
