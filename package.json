@@ -21,6 +21,8 @@
     "@angular/platform-browser": "2.2.3",
     "@angular/platform-browser-dynamic": "2.2.3",
     "@angular/router": "3.2.3",
+    "@types/cli-color": "^0.3.29",
+    "@types/passport": "^0.3.2",
     "bootstrap": "^3.3.7",
     "bootstrap-social": "^5.1.1",
     "cli-color": "^1.1.0",
