@@ -1,27 +1,13 @@
-## Modules
+[![Build Status](https://travis-ci.org/mrbgit/short-stories.svg?branch=master)](https://travis-ci.org/mrbgit/short-stories)
 
-<dl>
-<dt><a href="#module_User model">User model</a></dt>
-<dd></dd>
-<dt><a href="#module_auth">auth</a> : <code>auth</code></dt>
-<dd></dd>
-</dl>
+#Stories Map
 
-<a name="module_User model"></a>
+Stories map is designed to be a place where users come together and share stories around a theme and location, so that people can learn more about the people and the world around them. The theme could be anything ghost stories or the history of your town to a scavenger hunt or anything else you can think of.
 
-## User model
-<a name="module_User model..checkPassword
-checks a users password against the hash stored in the database with bcrypt"></a>
+Please feel free to fork this and create your own version with your own style and code. Even better make some improvements and send me a pull request. 
 
-### User model~checkPassword
-checks a users password against the hash stored in the database with bcrypt(pw, callback)
-**Kind**: inner method of <code>[User model](#module_User model)</code>  
+This site is built with a MEAN stack, Mongo, Express, Angular2, and Node.js. 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| pw | <code>string</code> | the password to be checked |
-| callback | <code>function</code> | a callback function to be called with either the response from the comparison or an error |
+[API documentation is available here ](https://rawgit.com/mrbgit/stories-map/master/out/index.html)
 
-<a name="module_auth"></a>
-
-## auth : <code>auth</code>
+Front-end documentation is coming soon
