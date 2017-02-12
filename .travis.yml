@@ -6,4 +6,5 @@ node_js:
   - "4"
 before_script:
   - npm install -g gulp
+  - npm install ./local_modules/models
 script: gulp
