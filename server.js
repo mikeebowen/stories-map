@@ -23,7 +23,7 @@ db.on('open', (callback) => {
 app.use(compression());//use compression
 app.use(morgan('combined'));// log errors with morgan
 //call routes with express router
-routes.auth.googleOauth(authRouter);
+routes.auth(authRouter);
 app.use('/auth', authRouter);
 
 //error handling
