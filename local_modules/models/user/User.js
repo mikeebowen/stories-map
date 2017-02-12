@@ -7,16 +7,12 @@
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
-/**
- * @todo Create functions to user schema to salt passwords
- * @todo Create password field in user schema
- */
-
 const userSchema = mongoose.Schema({
   displayName: String,
   userName: {
     type: String,
-    unique: true
+    unique: true,
+    required: true
   },
   name: {
     familyName: String,
@@ -29,28 +25,35 @@ const userSchema = mongoose.Schema({
       type: String,
       unique: true
     },
-    password: String
+    password: {
+      type: String,
+      set: (pw) => {
+        return bcrypt.hashSync(pw, 10);
+      }
+    }
+
   }
 });
 
-userSchema.savePassword = (password, callback) => {
-  bcrypt.hash(password, 8)
-  .then((hash) => {
-    callback(null, hash);
-  })
-  .catch((error) => {
-    callback(new Error(error));
-  });
-};
+/**
+ *@todo create async method to generate password hash
+ */
 
-userSchema.checkPassword = (password, callback) => {
-  bcrypt.compare(password, this.basic.password)
-  .then(function(res) {
-    callback(null, res);
-  })
-  .catch((error) => {
-    callback(new Error(error));
-  });
+/**
+ * @method checkPassword
+ * checks a users password against the hash stored in the database with bcrypt
+ * @param {string} pw - the password to be checked
+ * @param {function} callback - a callback function to be called with either the response from the comparison or an error
+ */
+
+userSchema.methods.checkPassword = function (pw, callback) {
+  bcrypt.compare(pw, this.basic.password)
+    .then((res) => {
+      callback(null, res);
+    })
+    .catch((error) => {
+      callback(new Error(error));
+    });
 };
 
 module.exports = exports = mongoose.model('User', userSchema);
