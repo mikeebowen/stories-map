@@ -27,10 +27,10 @@ routes.auth(authRouter);
 app.use('/auth', authRouter);
 
 //error handling
-app.use(function (err, req, res) {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});
+// app.use(function (err, req, res) {
+//   console.error(err.stack);
+//   res.status(500).send('Something broke!');
+// });
 
 app.listen(port, () => {
   console.log(clc.cyan(`server started on port ${port} at ${serverStartTime}`));

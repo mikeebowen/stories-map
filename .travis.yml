@@ -7,3 +7,5 @@ node_js:
 before_script:
   - npm install -g gulp
 script: gulp
+before_install:
+  - npm install ./local_modules/models
