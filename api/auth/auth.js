@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const googlePassportStrategy = require('./googleOAuth/googlePassportStrategy');
+const localPassportStrategy = require('./localAuth/localPassportStrategy');
 let ngRoute = process.env.NODE_ENV === 'development' || 'dev' ? '//localhost:4200' : '';
 let session_secret = process.env.SESSION_SECRET;
 let mongoUri = process.env.MONGOLAB_URI;
@@ -32,6 +33,7 @@ function auth(app) {
   app.use(passport.session());
   // use the googleOAuth strategy
   passport.use(googlePassportStrategy);
+  passport.use('basic', localPassportStrategy);
   //serialize and deserialize the user session
   passport.serializeUser((user, cb) => {
     cb(null, user);
@@ -47,6 +49,11 @@ function auth(app) {
     (req, res) => {
       res.redirect(`${ngRoute}/`);
     });
+
+  app.get('/login/local', passport.authenticate('basic', { scope: ['profile']}), (req, res) => {
+    if (req.isAuthenticated()) res.redirect(`${ngRoute}/`);
+    else res.redirect(`${ngRoute}/login`);
+  });
 }
 
 module.exports = auth;
