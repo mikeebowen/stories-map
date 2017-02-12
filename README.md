@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mrbgit/short-stories.svg?branch=master)](https://travis-ci.org/mrbgit/short-stories)
+[![Build Status](https://travis-ci.org/mrbgit/stories-map.svg?branch=master)](https://travis-ci.org/mrbgit/stories-map)
 
 #Stories Map
 
