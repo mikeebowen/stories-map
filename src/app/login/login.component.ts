@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,12 @@ export class LoginComponent implements OnInit {
     this.hostName = window.location.hostname;
   }
 
+
   ngOnInit() {
+  }
+
+  login() {
+    alert('Create login method');
   }
 
 }

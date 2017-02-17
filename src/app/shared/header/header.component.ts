@@ -6,19 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
-  curUrl: string;
+  currentUrl: string;
   isHomepage: string;
 
   constructor() {
-    this.curUrl = window.location.pathname;
+    this.currentUrl = window.location.pathname;
   }
 
   ngOnInit() {
-    this.isHomepage = this.curUrl === '/' ? '15%' : '';
+    this.isHomepage = this.currentUrl === '/' ? '15%' : '';
   }
 
   submitSearch() {
-    alert('TO DO: Implement submitSearch function');
+    alert('TODO: Implement submitSearch function');
   }
 
 }
