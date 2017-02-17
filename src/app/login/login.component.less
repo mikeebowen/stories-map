@@ -1,4 +1,6 @@
 @import '../../variables';
+@import "../../styles";
+
 .jumbotron {
   margin: 3% auto;
   width: 80%;
@@ -9,14 +11,26 @@
 }
 
 .btn-google {
-  background-color: #db3236;
+  background-color: @google-red;
   color: white;
+  width: 45%;
+}
+
+.btn-login {
   width: 45%;
 }
 
 .googleButtonWrapper {
   margin: 0 auto;
   min-width: 80%;
-  width: 100%;
   width: 80%;
+}
+
+.login-form {
+  width: 91%;
+
+  & label {
+    &:extend(h3);
+  }
+
 }
