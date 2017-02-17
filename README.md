@@ -4,6 +4,8 @@
 
 Stories map is designed to be a place where users come together and share stories around a theme and location, so that people can learn more about the people and the world around them. The theme could be anything ghost stories or the history of your town to a scavenger hunt or anything else you can think of.
 
+Currently the design is a ghost/scary story style, but on my list of TODOs is add CMS functionality so that anyone can easily change the titles, colors, images, etc., that are displayed without editing the code.
+
 Please feel free to fork this and create your own version with your own style and code. Even better make some improvements and send me a pull request. 
 
 This site is built with a MEAN stack, Mongo, Express, Angular2, and Node.js. 
