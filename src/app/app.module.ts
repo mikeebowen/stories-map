@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SiteTitleComponent } from './shared/site-title/site-title.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SiteTitleComponent } from './shared/site-title/site-title.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    SiteTitleComponent
+    SiteTitleComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,

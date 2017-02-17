@@ -2,12 +2,7 @@
   <div class="row" role="presentation">
     <div class="col-xs-12" role="presentation">
       <div class="jumbotron">
-        <h2>Tell your own scary stories</h2>
         <div class="googleButtonWrapper">
-          <button class="btn btn-lg btn-primary btn-login" (click)="login()"><i class="fa fa-sign-in" aria-hidden="true"></i>
-Login</button>
-          <a class="btn btn-google btn-lg" id="testBtn" href="//{{hostName}}:3000/auth/login/google" role="button"><i class="fa fa-google" aria-hidden="true"></i>
-Login with Google</a>
           <form class="login-form">
             <div class="form-group">
               <label for="userName">Username</label>
@@ -18,6 +13,9 @@ Login with Google</a>
               <input type="password" class="form-control" id="password" name="password">
             </div>
           </form>
+          <button class="btn btn-lg btn-primary btn-login"><i class="fa fa-sign-in" role="presentation" aria-hidden="true"></i> Login</button>
+          <a class="btn btn-google btn-lg" id="testBtn" href="//{{hostName}}:3000/auth/login/google" role="button"><i class="fa fa-google" aria-hidden="true"></i>
+            Login with Google</a>
         </div>
       </div>
     </div>

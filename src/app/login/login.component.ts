@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // TODO create login method for local auth
   login() {
     alert('Create login method');
   }
