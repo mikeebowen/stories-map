@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.isHomepage = this.currentUrl === '/' ? '15%' : '';
   }
-
+  // TODO create searchFunction
   submitSearch() {
     alert('TODO: Implement submitSearch function');
   }
