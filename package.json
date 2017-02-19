@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
-    "dev": "node_modules/.bin/mongod --dbpath=./data --smallfiles & ng serve --proxy proxy.json & nodemon server.js",
+    "dev": "mongod --dbpath=./data --smallfiles --auth & ng serve --proxy proxy.json & nodemon server.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "gulp test",
     "test-angular": "ng test",
