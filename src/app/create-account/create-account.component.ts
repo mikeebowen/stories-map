@@ -11,5 +11,9 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {
   }
+  // TODO create createAccount method
+  createAccount() {
+    alert('TODO create createAccount method');
+  }
 
 }

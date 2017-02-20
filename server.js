@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const compression = require('compression');
 const format = require('util').format;
 const authRouter = express.Router();
+const userRouter = express.Router();
 const db = mongoose.connection;
 
 const routes = require('./api/routes');
@@ -34,7 +35,9 @@ app.use(compression());//use compression
 app.use(morgan('combined'));// log errors with morgan
 //call routes with express router
 routes.auth(authRouter);
+routes.userRoutes(userRouter);
 app.use('/auth', authRouter);
+app.use('/api', userRouter);
 
 //error handling
 // app.use(function (err, req, res) {

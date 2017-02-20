@@ -23,8 +23,8 @@ gulp.task('lint', () => {
   .pipe(eslint.failAfterError());
 });
 
-gulp.task('test', () =>{
-  return gulp.src('**/*.my.test.js')
+gulp.task('test', () => {
+  return gulp.src(['api/**/*.my.test.js', 'local_modules/**/*.my.test.js'])
   .pipe(mocha())
   .once('error', () => {
     process.exit(1);
