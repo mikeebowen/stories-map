@@ -1,3 +1,32 @@
-<p>
-  create-account works!
-</p>
+<div class="container" role="presentation">
+  <div class="row" role="presentation">
+    <div class="col-xs-12">
+      <h1 class="text-center">Create Account</h1>
+    </div>
+  </div>
+</div>
+<main class="container main-blue-box" role="presentation">
+<div class="row" role="presentation">
+  <div class="col-xs-10 col-xs-offset-1 jumbotron">
+    <form (submit)="createAccount()">
+      <div class="form-group">
+        <label for="emailAddress">Email</label>
+        <input type="text" class="form-control" id="emailAddress" name="emailAdress">
+      </div>
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input type="text" class=" form-control" id="userName" name="userName">
+      </div>
+      <div class="form-group">
+        <label for="givenName">First Name</label>
+        <input type="text" class="form-control" id="givenName" name="givenName">
+      </div>
+      <div class="form-group">
+        <label for="familyName">Family Name</label>
+        <input type="text" class="form-control" id="familyName" name="familyName">
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit"><i class="fa fa-plus" aria-hidden="true"></i> Create Account</button>
+    </form>
+  </div>
+</div>
+</main>
