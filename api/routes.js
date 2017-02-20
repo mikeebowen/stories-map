@@ -5,8 +5,10 @@
  * @type {auth}
  */
 
-const auth = require('./auth/auth.js');
+const auth = require('./auth/auth');
+const userRoutes = require('./user/userRoutes');
 
 module.exports = {
-  auth
+  auth,
+  userRoutes
 };
