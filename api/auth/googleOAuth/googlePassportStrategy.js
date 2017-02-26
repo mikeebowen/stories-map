@@ -16,7 +16,7 @@ const googlePassportOauthStrategy =  new GooglePassportOauthStrategy(
     User.findOne({ googleId: profile.googleId }, (err, user) => {
 
       if (err) return console.error(`Error : ${err}`);
-
+      // TODO fix Oauth user creation. It throws an error and fails if the user already exists in the database
       if (!user) {
         User.create({
           userName: profile.displayName.replace(/ /g, ''),
