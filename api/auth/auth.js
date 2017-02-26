@@ -5,9 +5,9 @@ const googlePassportStrategy = require('./googleOAuth/googlePassportStrategy');
 const localPassportStrategy = require('./localAuth/localPassportStrategy');
 
 let ngRoute = process.env.NODE_ENV === 'development' || 'dev' ? '//localhost:4200' : '';
-
+// TODO see if OAuth will work by creating local express.Router() instead of passing app in from the server.js
 function auth(app) {
-
+  // TODO see if all passport methods can be moved into server.js
   // use the googleOAuth strategy
   passport.use(googlePassportStrategy);
   passport.use('basic', localPassportStrategy);
