@@ -6,7 +6,7 @@ const mocha = require('gulp-mocha');
 const gulpJsdoc2md = require('gulp-jsdoc-to-markdown');
 const concat = require('gulp-concat');
 
-gulp.task('docs', function () {
+gulp.task('docs', () => {
   return gulp.src(['local_modules/**/*.js', 'api/**/*.js', 'src/**/*.js'])
     .pipe(concat('README.md'))
     .pipe(gulpJsdoc2md())

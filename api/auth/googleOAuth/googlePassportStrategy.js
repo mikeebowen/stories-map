@@ -19,6 +19,7 @@ const googlePassportOauthStrategy =  new GooglePassportOauthStrategy(
 
       if (!user) {
         User.create({
+          userName: profile.displayName.replace(/ /g, ''),
           displayName: profile.displayName,
           name: profile.name,
           googleId: profile.id,
